@@ -62,7 +62,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final appDocumentDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      builder: (_) => MyApp()));
   } catch (e) {
     print("error occurd in main: $e");
   }
